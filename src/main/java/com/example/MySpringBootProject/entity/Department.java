@@ -1,6 +1,5 @@
 package com.example.MySpringBootProject.entity;
 
-import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -3,7 +3,6 @@ package com.example.MySpringBootProject.controller;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.MySpringBootProject.entity.Employee;
@@ -72,6 +70,12 @@ public class HomeController {
 		return "create";
 	}
 	
+	@GetMapping("/addrandom")
+	public String addRandom(Model model) {
+		empService.addRandom();
+		return "redirect:/";
+	}
+
 	@GetMapping("/search")
 	public String search(
 	        @RequestParam(required = false) Long id,
@@ -101,6 +105,12 @@ public class HomeController {
 	    // Return the view
 	    return "index";
 	}
+
+	@GetMapping("/error")
+	public String getMethodName() {
+		return "index";
+	}
+	
 
 	
 }
