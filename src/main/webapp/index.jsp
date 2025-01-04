@@ -44,6 +44,9 @@
                             <div class="col-md-3">
                                 <input type="text" name="name" class="form-control" placeholder="Search by Name">
                             </div>
+							<div class="col-md-3">
+							    <input type="text" name="email" class="form-control" placeholder="Search by Email">
+							</div>
                             <div class="col-md-3">
                                 <input type="number" name="id" class="form-control" placeholder="Search by ID">
                             </div>
@@ -52,8 +55,11 @@
                                     placeholder="Search by Date of Birth (yyyy-MM-dd)">
                             </div>
                             <div class="col-md-3">
-                                <input type="number" name="salary" class="form-control" placeholder="Search by Salary">
+                                <input type="number" name="maxSalary" class="form-control" placeholder="Search by Max. Salary">
                             </div>
+							<div class="col-md-3">
+							     <input type="number" name="minSalary" class="form-control" placeholder="Search by Min. Salary">
+							</div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Search</button>
                     </form>

@@ -80,12 +80,14 @@ public class HomeController {
 	public String search(
 	        @RequestParam(required = false) Long id,
 	        @RequestParam(required = false) String name,
+	        @RequestParam(required = false) String email,
 	        @RequestParam(required = false) LocalDateTime localDateTime,
-	        @RequestParam(required = false) Double salary,
+	        @RequestParam(required = false) Double maxSalary,
+	        @RequestParam(required = false) Double minSalary,
 	        Model model) {
 	    
 	    // Get all employees from the service
-	    List<Employee> empList = empService.search(id,name,localDateTime,salary);
+	    List<Employee> empList = empService.search(id,name,email,localDateTime,maxSalary,minSalary);
 	    
 	    // Apply filters if parameters are provided
 		/*

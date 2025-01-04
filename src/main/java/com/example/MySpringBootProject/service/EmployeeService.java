@@ -36,9 +36,9 @@ public class EmployeeService {
 		return empRepository.findById(l);
 	}
 
-	public List<Employee> search(Long id, String name, LocalDateTime localDateTime, Double salary) {
+	public List<Employee> search(Long id, String name,String email, LocalDateTime localDateTime, Double maxSalary, Double minSalary) {
 		
-		return empRepository.searchEMP(id,name,localDateTime,salary);
+		return empRepository.searchEMP(id,name,email,localDateTime,maxSalary,minSalary);
 	}
 
 	public static Employee generateRandomEmployee() {

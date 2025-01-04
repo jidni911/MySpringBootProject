@@ -14,15 +14,19 @@ import com.example.MySpringBootProject.entity.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 	@Query(value = "select * from emp e where"
-			+ " e.id = :id or "
-			+ " e.name = :name or "
-			+ " e.date_of_birth = :date or "
-			+ " e.salary = :salary ", nativeQuery = true)
+			+ " (:id is null or e.id = :id) and "
+			+ " (:name is null or e.name like %:name%) and "
+			+ " (:email is null or e.email like %:email%) and "
+			+ " (:date is null or e.date_of_birth = :date) and "
+			+ " (:maxSalary is null or e.salary <= :maxSalary) and"
+			+ " (:minSalary is null or e.salary >= :minSalary)", nativeQuery = true)
 	public List<Employee> searchEMP(
 			@Param("id") Long id,
 			@Param("name") String name,
+			@Param("email") String email,
 			@Param("date") LocalDateTime localDateTime,
-			@Param("salary") Double salary
+			@Param("maxSalary") Double maxSalary,
+			@Param("minSalary") Double minSalary
 			);
 
 }
