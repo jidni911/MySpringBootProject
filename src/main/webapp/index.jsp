@@ -74,7 +74,8 @@
                         %>
 
                         <br>
-                        <a name="" id="" class="btn btn-primary" href="/dept" role="button">Browse Department </a>
+                        <a class="btn btn-primary" href="/dept" role="button">Browse Department </a>
+						<a class="btn btn-primary" href="/file" role="button">Image </a>
 
 
                         <!-- Table displaying employee data -->
