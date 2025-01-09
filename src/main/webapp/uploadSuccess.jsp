@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,12 +61,31 @@
                     <p><strong>File Name:</strong> ${param.fileName}</p>
                     <p><strong>File Size:</strong> ${param.fileSize} MB</p>
                 </div>
-
+				<img src="data:image/jpeg;base64,${image}" alt="Image" />
                 <!-- Return to Upload Page Button -->
-                <a href="file-upload.jsp" class="btn btn-custom">Return to Upload Form</a>
+                <a href="/file" class="btn btn-custom">Return to Upload Form</a>
             </div>
         </div>
     </div>
+	
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+	  <div class="carousel-inner">
+		<c:forEach var="image" items="${images}" varStatus="status">
+		      <div class="carousel-item ${status.first ? 'active' : ''}">
+		        <img src="data:image/jpeg;base64,${image}" class="d-block w-100" alt="Image">
+		      </div>
+		    </c:forEach>
+			</div>
+			  
+			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Previous</span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			      <span class="visually-hidden">Next</span>
+			    </button>
+				</div>
 
     <!-- Bootstrap 5 JS & Popper (for dropdowns, modals, tooltips) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybB6fRrF2X4wV37iBvJkFq5lZB88MIl7B0jMlQ6c3wQpS3ro+M" crossorigin="anonymous"></script>

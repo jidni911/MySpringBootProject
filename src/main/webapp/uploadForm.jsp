@@ -10,7 +10,7 @@
 <body>
     <h1>Upload Image</h1>
 
-	<form action="/uploadImage" method="post" enctype="multipart/form-data">
+	<form action="/file/uploadImage" method="post" enctype="multipart/form-data">
 	        <label for="imageFile">Choose an image to upload:</label>
 	        <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
 	        <button type="submit">Upload</button>
