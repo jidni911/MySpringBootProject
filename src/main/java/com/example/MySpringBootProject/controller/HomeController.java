@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.MySpringBootProject.entity.Employee;
 import com.example.MySpringBootProject.service.EmployeeService;
 
-@Controller("/")
+@Controller
 public class HomeController {
 	
 	@Autowired

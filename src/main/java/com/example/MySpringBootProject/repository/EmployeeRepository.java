@@ -15,8 +15,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 	@Query(value = "select * from emp e where"
 			+ " (:id is null or e.id = :id) and "
-			+ " (:name is null or e.name like %:name%) and "
-			+ " (:email is null or e.email like %:email%) and "
+			+ " (:name is null or e.name like '%:name%') and "
+			+ " (:email is null or e.email like '%:email%') and "
 			+ " (:date is null or e.date_of_birth = :date) and "
 			+ " (:maxSalary is null or e.salary <= :maxSalary) and"
 			+ " (:minSalary is null or e.salary >= :minSalary)", nativeQuery = true)

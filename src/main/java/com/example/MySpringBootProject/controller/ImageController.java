@@ -13,14 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.MySpringBootProject.repository.ImageDataRepository;
 import com.example.MySpringBootProject.service.FileDataService;
 import com.example.MySpringBootProject.service.ImageDataService;
 
-
 @Controller
-@RequestMapping("/file")
-public class FileController {
+@RequestMapping("/image")
+public class ImageController {
 
 	@Autowired
 	FileDataService imageDataService;
@@ -53,7 +51,6 @@ public class FileController {
 			String encodedImage = Base64.getEncoder().encodeToString(imageBytes);
 			
 			model.addAttribute("image", encodedImage);
-			model.addAttribute("images", imageDataService.downloadAllImage());
 
 			return "uploadSuccess";
 		}

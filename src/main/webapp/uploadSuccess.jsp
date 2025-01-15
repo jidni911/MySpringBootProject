@@ -61,7 +61,7 @@
                     <p><strong>File Name:</strong> ${param.fileName}</p>
                     <p><strong>File Size:</strong> ${param.fileSize} MB</p>
                 </div>
-				<img src="data:image/jpeg;base64,${image}" alt="Image" />
+				<img src="data:image/jpeg;base64,${image}" alt="Image" height="200px" weight="200px" />
                 <!-- Return to Upload Page Button -->
                 <a href="/file" class="btn btn-custom">Return to Upload Form</a>
             </div>
